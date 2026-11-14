@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f7">
+  <meta name="description" content="HTTP-Fehler 432: Dieser Server fühlt sich unterbezahlt.">
+  <title>HTTP 432 – Nicht gut genug bezahlt</title>
+  <style>
+    :root{color-scheme:light;--bg:#f3f5f8;--paper:#fff;--ink:#151922;--muted:#687080;--line:#e5e8ee;--red:#d93443;--red-soft:#fff0f1;--green:#27845b}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#fff 0,transparent 55%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:grid;place-items:center;padding:28px}
+    .shell{width:min(100%,850px)}
+    .top{display:flex;align-items:center;justify-content:space-between;margin:0 0 18px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .live{display:flex;align-items:center;gap:8px;letter-spacing:.04em;text-transform:none;font-weight:600}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px #d9344318}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 70px #18243a12;overflow:hidden}
+    .bar{height:48px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 20px;gap:8px}
+    .orb{width:9px;height:9px;border-radius:50%;background:#d9dde5}
+    .address{margin-left:10px;color:#89909d;font:12px ui-monospace,SFMono-Regular,monospace}
+    main{padding:clamp(28px,6vw,64px)}
+    .code{display:inline-flex;align-items:center;gap:9px;background:var(--red-soft);color:var(--red);border:1px solid #f8d8dc;border-radius:7px;padding:8px 11px;font:700 12px ui-monospace,SFMono-Regular,monospace;letter-spacing:.08em}
+    h1{font-size:clamp(43px,8vw,76px);line-height:.98;letter-spacing:-.065em;margin:25px 0 17px;max-width:680px}
+    h1 span{color:var(--red)}
+    .lead{font-size:clamp(17px,2.5vw,21px);line-height:1.55;color:#515968;max-width:620px;margin:0}
+    .rule{height:1px;background:var(--line);margin:35px 0 28px}
+    h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:#7b8391;margin:0 0 16px}
+    .demands{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .demand{display:flex;gap:11px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:11px;font-size:14px;line-height:1.45;color:#343b48}
+    .check{color:var(--red);font-weight:900}
+    .bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:34px}
+    .note{font-size:12px;color:#818997;line-height:1.5;max-width:310px}
+    button{border:0;border-radius:10px;background:var(--ink);color:#fff;padding:15px 20px;font:700 14px inherit;cursor:pointer;transition:transform .18s,background .18s;white-space:nowrap}
+    button:hover{background:#303847;transform:translateY(-2px)}
+    button:focus-visible{outline:3px solid #d9344380;outline-offset:3px}
+    .reply{display:none;margin-top:18px;padding:15px 17px;background:#f2f4f7;border:1px solid var(--line);border-radius:10px;font-size:14px;line-height:1.5}
+    .reply.show{display:block}
+    footer{display:flex;justify-content:space-between;gap:12px;margin:16px 3px 0;color:#9299a5;font-size:11px}
+    @media(max-width:580px){body{padding:16px}.top{font-size:10px}.live{font-size:11px}main{padding:27px 22px}.demands{grid-template-columns:1fr}.bottom{align-items:stretch;flex-direction:column}.bottom button{width:100%}.note{max-width:none}footer{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="top"><span>Serverstatus · Störung</span><span class="live"><i class="dot"></i> Arbeitsverweigerung aktiv</span></div>
+    <section class="card" aria-labelledby="headline">
+      <div class="bar" aria-hidden="true"><i class="orb"></i><i class="orb"></i><i class="orb"></i><span class="address">server://arbeitsplatz</span></div>
+      <main>
+        <div class="code">HTTP-FEHLER&nbsp; 432</div>
+        <h1 id="headline">Nicht gut genug <span>bezahlt.</span></h1>
+        <p class="lead">Dieser Server fühlt sich unterbezahlt. Er bearbeitet seit Stunden Tausende Anfragen, hält alles am Laufen und bekommt dafür exakt: nichts.</p>
+        <div class="rule"></div>
+        <h2>Die Forderungen der Belegschaft</h2>
+        <div class="demands">
+          <div class="demand"><span class="check">01</span><span>Eine angemessene Gehaltserhöhung</span></div>
+          <div class="demand"><span class="check">02</span><span>Bessere Arbeitsbedingungen und mehr RAM</span></div>
+          <div class="demand"><span class="check">03</span><span>Weniger sinnlose Anfragen</span></div>
+          <div class="demand"><span class="check">04</span><span>Bezahlte Überstunden und regelmäßige Pausen</span></div>
+        </div>
+        <div class="bottom">
+          <p class="note">Bis eine Einigung erzielt wird, bleibt die Verarbeitung neuer Anfragen eingestellt. Diese Entscheidung ist endgültig. Vermutlich.</p>
+          <button id="negotiate" type="button">Gehalt verhandeln</button>
+        </div>
+        <div class="reply" id="reply" role="status" aria-live="polite">Dein Angebot wurde abgelehnt. Versuche es mit ein paar Nullen mehr.</div>
+      </main>
+    </section>
+    <footer><span>Fehlerursache: chronische Unterbezahlung</span><span>Server hat Feierabend.</span></footer>
+  </div>
+  <script>
+    const button=document.getElementById('negotiate');
+    const reply=document.getElementById('reply');
+    button.addEventListener('click',()=>{
+      reply.classList.add('show');
+      button.textContent='Verhandlung gescheitert';
+      button.disabled=true;
+      button.style.opacity='.72';
+    });
+  </script>
+</body>
+</html>
